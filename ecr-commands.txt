@@ -1,11 +1,12 @@
 // log in to ECR
-$(aws ecr get-login --no-include-email --region us-east-1)
+//$(aws ecr get-login --no-include-email --region us-east-1)
+aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 709065450151.dkr.ecr.ap-southeast-1.amazonaws.com/sample
 
 // build the docker image
-docker build -t youtube:latest .
+docker build -t sample:latest .
 
 // tag the docker image
-docker tag <IMAGE_NAME> <ECR_URL>
+docker tag sample:latest 709065450151.dkr.ecr.ap-southeast-1.amazonaws.com/sample:latest
 
 // push to ECR
-docker push <ECR_URL>
+docker push 709065450151.dkr.ecr.ap-southeast-1.amazonaws.com/sample:latest
