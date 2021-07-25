@@ -11,6 +11,6 @@ phases:
   post_build:
     commands:
       - docker push 709065450151.dkr.ecr.ap-southeast-1.amazonaws.com/sample:latest
-      - printf '[{"name":stg-jagota-task,"imageUri":"%s"}]' 709065450151.dkr.ecr.ap-southeast-1.amazonaws.com/sample:latest > imagedefinitions.json
+      - printf '[{"name":"stg-jagota-task","imageUri":"%s"}]' 709065450151.dkr.ecr.ap-southeast-1.amazonaws.com/sample:latest > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
